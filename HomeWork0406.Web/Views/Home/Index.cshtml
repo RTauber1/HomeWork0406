@@ -1,0 +1,22 @@
+﻿@model List<Image>;
+@using HomeWork0406.Data; 
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @foreach (Image i in Model)
+            {
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="jumbotron" style="margin-bottom: 20px; text-align: center;">
+                            <a href="/home/viewimage?id=@i.Id">
+                                <h3>@i.Title</h3>
+                                <h5>Uploaded at: @i.DateUploaded.ToShortDateString() @i.DateUploaded.ToShortTimeString()</h5>
+                                <img style="width: 400px;" src="@i.FileName" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </main>
+    </div>

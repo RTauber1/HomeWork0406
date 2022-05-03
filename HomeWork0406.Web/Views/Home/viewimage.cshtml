@@ -1,0 +1,26 @@
+﻿@model VeiwImage;
+@using HomeWork0406.Data;
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <div class="row">
+            <input type="hidden" id="image-id" value="@Model.Image.Id" />
+            <div class="col-md-10 col-md-offset-1 well">
+                <h1>@Model.Image.Title</h1>
+                <img src="@Model.Image.FileName" style="width: 900px;" />
+                <br />
+                <br />
+                @if (Model.CouldLikeImage)
+                {
+                    <button type = "button" id="like-button" class="btn btn-primary btn-lg">LIKE</button>
+                }
+                else
+                {
+                <button type = "button" id="like-button" class="btn btn-primary btn-lg" disabled>LIKE</button>
+                }
+            Current Likes: <span id="likes-count">@Model.Image.Likes</span>
+            </div>
+        </div>
+    </main>
+</div>
