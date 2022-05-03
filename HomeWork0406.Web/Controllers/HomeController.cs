@@ -81,7 +81,7 @@ namespace HomeWork0406.Web.Controllers
 
             ImagesLike.Add(id);
 
-            HttpContext.Session.Set("ImagesLike", ImagesLike);
+            HttpContext.Session.Set("AlreadyLiked", ImagesLike);
         }
         public  ActionResult GetLikes(int id)
         {
